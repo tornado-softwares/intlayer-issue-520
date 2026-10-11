@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["ESNext"],
+    // Bun executes the TypeScript directly, so nothing is emitted and imports
+    // are resolved the way a bundler does (extensionless `./index.content` works).
+    "module": "Preserve",
+    "moduleResolution": "bundler",
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "types": ["bun-types"],
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "paths": {
+      "@intlayer/dictionaries-entry": ["./.intlayer/main/dictionaries.mjs"],
+      "@intlayer/unmerged-dictionaries-entry": [
+        "./.intlayer/main/unmerged_dictionaries.mjs"
+      ],
+      "@intlayer/remote-dictionaries-entry": [
+        "./.intlayer/main/remote_dictionaries.mjs"
+      ],
+      "@intlayer/dynamic-dictionaries-entry": [
+        "./.intlayer/main/dynamic_dictionaries.mjs"
+      ],
+      "@intlayer/fetch-dictionaries-entry": [
+        "./.intlayer/main/fetch_dictionaries.mjs"
+      ],
+      "@intlayer/config/built": ["./.intlayer/config/configuration.mjs"]
+    }
+  },
+  // `.intlayer/types` holds the auto-generated dictionary key types
+  "include": ["src", "intlayer.config.ts", ".intlayer/**/*.ts"]
+}
